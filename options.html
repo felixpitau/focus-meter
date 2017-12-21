@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Focus Meter Options</title>
+    <style>
+    body {
+      max-width: 300px;
+      margin: auto;
+    }
+
+    label, input, textarea, button {
+      float: left;
+      clear: left;
+      padding: 5px;
+    }
+
+    input[type="text"], textarea, button {
+      width: 300px;
+    }
+
+    textarea {
+      height: 300px;
+    }
+
+    label, button {
+      margin-top: 10px;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="status">
+
+    </div>
+
+    <label>Focus/Break Ratio</label>
+    <input id="ratio" type="text" />
+
+    <label>Work time start</label>
+    <input id="work-start" type="text" />
+
+    <label>Work time end</label>
+    <input id="work-end" type="text" />
+
+    <label>
+      Automatic Overtime
+      <input id="overtime" type="checkbox" />
+    </label>
+
+    <label>Minimum Focus Duration</label>
+    <input id="min-focus" type="text" />
+
+    <label>Maximum Break Duration</label>
+    <input id="max-break" type="text" />
+
+    <label>Domain/URL Blacklist (one per line)</label>
+    <textarea id="blacklist"></textarea>
+
+    <button id="save">SAVE</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>

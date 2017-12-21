@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Focus Meter</title>
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      #meter {
+        height: 130px;
+        width: 200px;
+        background-image: url('background.png');
+      }
+
+      #tokens {
+        position: absolute;
+        top: 83px;
+        text-align: center;
+        width: 100%;
+        font: bold 14px/100% Roboto;
+      }
+
+      #indicator {
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+        height: 40px;
+        top: 90px;
+      }
+
+      #indicator > div {
+        color: white;
+        padding: 5px 0;
+        width: 50%;
+        left: 25%;
+        position: absolute;
+        text-align: center;
+        height: 20px;
+        top: 40px;
+        transition: all 0.7s;
+      }
+
+      #indicator-focus {
+        background: #B11;
+        left: 25%;
+        transform: rotate(1deg);
+      }
+
+      #indicator-work {
+        background: #EB0;
+        color: black;
+        left: 23%;
+        transform: rotate(2deg);
+      }
+
+      #indicator-free {
+        background: #2A2;
+        left: 26%;
+        transform: rotate(-1deg);
+      }
+
+      #indicator-break {
+        background: #22A;
+        left: 27%;
+        transform: rotate(-2deg);
+      }
+
+      #indicator div.active {
+        top: 13px;
+      }
+
+      #notification {
+        background: #DE3E4D;
+        color: white;
+        font: bold 14px/100% Roboto;
+        text-align: center;
+        padding: 3px 0;
+        height: 20px;
+      }
+
+      #options {
+        background: #DDF;
+        color: black;
+        padding: 2px 4px;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 27px);
+        cursor: pointer;
+      }
+
+      button {
+        position: relative;
+        float: left;
+        width: 50%;
+        margin-bottom: 10px;
+        background: #DE3E4D;
+        color: #EEE;
+        border: none;
+        font: normal 16px/100% Verdana;
+        height: 30px;
+        padding: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 0 #9E000D;
+      }
+
+      button:hover {
+        top: 1px;
+        margin-bottom: 9px;
+        background: #DC3C4B;
+        box-shadow: 0 3px 0 #9E000D;
+      }
+
+      button.active,
+      button.active:hover {
+        background: #D83847;
+        top: 3px;
+        margin-bottom: 7px;
+        box-shadow: 0 1px 0 #9E000D;
+      }
+
+      #button-group {
+        padding: 10px;
+        height: 30px;
+        background: #BE1E2D;
+      }
+
+      #focus {
+        border-radius: 5px 0 0 5px;
+        border-right: solid 1px #9E000D;
+      }
+
+      #break {
+        border-radius: 0 5px 5px 0;
+      }
+
+      #timer {
+        position: absolute;
+        top: 65px;
+        text-align: center;
+        width: 100%;
+        font: bold 16px/100% Roboto;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <div id="meter">
+      <div id="options">
+        OPTIONS
+      </div>
+      <div id="tokens">
+      </div>
+      <div id="timer">
+      </div>
+      <div id="indicator">
+        <div id="indicator-focus">
+          FOCUS
+        </div>
+        <div id="indicator-work">
+          WORK
+        </div>
+        <div id="indicator-break">
+          BREAK
+        </div>
+        <div id="indicator-free">
+          FREE
+        </div>
+      </div>
+    </div>
+    <div id="notification">
+
+    </div>
+    <div id="button-group">
+      <button id="focus">FOCUS</button>
+      <button id="break">BREAK</button>
+    </div>
+  </body>
+</html>

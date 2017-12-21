@@ -1,0 +1,29 @@
+#focusmeter {
+
+}
+
+.focusmeter-block-container {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: #C11;
+  z-index: 2147483647;
+}
+
+.focusmeter-text {
+  width: 50%;
+  margin: 20px auto;
+  font: bold 20px/160% Verdana;
+  text-align: center;
+  background: #FFF;
+  padding: 30px;
+  color: #C11;
+  opacity: 1;
+  text-transform: uppercase;
+}
