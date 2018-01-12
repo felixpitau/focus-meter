@@ -3,7 +3,7 @@
   "name": "Focus Meter",
   "short_name": "Focus Meter",
   "description": "Tracks focus and break times and blocks distracting sites when you're meant to focus.",
-  "version": "1.0",
+  "version": "1.1",
   "background": {
     "scripts": ["background.js"],
     "persistent": false

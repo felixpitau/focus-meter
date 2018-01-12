@@ -43,3 +43,4 @@ if (document.readyState === 'complete') {
   document.addEventListener('DOMContentLoaded', checkToBlock);
 }
 chrome.storage.onChanged.addListener(checkToBlock);
+document.onfocus = checkToBlock();

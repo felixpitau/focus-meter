@@ -4,60 +4,172 @@
     <title>Focus Meter Options</title>
     <style>
     body {
+      background: #25AAE1;
       max-width: 300px;
       margin: auto;
     }
 
-    label, input, textarea, button {
+    #options-wrapper {
+      background: #BE1E2D;
+      color: white;
+      width: 350px;
+      padding: 20px 20px 60px 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      display: inline-block;
+    }
+
+    label, input, textarea, button, h2 {
       float: left;
       clear: left;
       padding: 5px;
+    }
+
+    h2 {
+      width: 100%;
+      font-size: 23px;
+    }
+
+    p {
+      font: normal 18px/160% Roboto;
     }
 
     input[type="text"], textarea, button {
       width: 300px;
     }
 
+    label, button {
+      margin-top: 10px;
+    }
+
+    button,
+    input[type="text"],
+    textarea {
+      position: relative;
+      float: left;
+      clear: left;
+      width: calc(100% - 10px);
+      margin-bottom: 10px;
+      background: #DE3E4D;
+      color: #EEE;
+      border: none;
+      font: normal 16px/100% Verdana;
+      height: 30px;
+      padding: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #9E000D;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    input[type="text"],
+    textarea {
+      background: #FFF;
+      box-shadow: 0 -4px 0 #DDD;
+      color: black;
+    }
+
     textarea {
       height: 300px;
     }
 
-    label, button {
-      margin-top: 10px;
+    button {
+      top: 0px;
     }
+
+    label {
+      font-size: 16px;
+    }
+
+    button:hover {
+      top: 1px;
+      margin-bottom: 9px;
+      background: #DC3C4B;
+      box-shadow: 0 3px 0 #9E000D;
+    }
+
+    button.active,
+    button.active:hover {
+      background: #D83847;
+      top: 3px;
+      margin-bottom: 7px;
+      box-shadow: 0 1px 0 #9E000D;
+    }
+
+    .focus,
+    .work,
+    .free,
+    .break {
+      padding: 2px 5px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .focus {
+      background: #DC3C4B;
+    }
+
+    .work {
+      background: #EB0;
+      color: black;
+    }
+
+    .free {
+      background: #2A2;
+    }
+
+    .break {
+      background: #22A;
+    }
+
     </style>
   </head>
 
   <body>
 
-    <div id="status">
+    <div id="options-wrapper">
+      <div id="status">
 
+      </div>
+      <h2>How it works</h2>
+      <p>
+        Focus Meter blocks websites that distract you from getting your work done. Set the time you need to <span class="work">work</span> and the sites on the blacklist will be blocked. Turning on <span class="focus">focus</span> time will earn you tokens you can spend on <span class="break">break</span> time. These breaks will temporarily allow the sites on the blacklist but will automatically continue blocking at the break's end.
+      </p>
+
+      <h2><span class="work">Work</span> and <span class="free">Free</span> time</h2>
+
+      <label>Work time start</label>
+      <input id="work-start" type="text" />
+
+      <label>Work time end</label>
+      <input id="work-end" type="text" />
+
+      <h2><span class="focus">Focus</span> and <span class="break">Break</span> time</h2>
+
+      <label>Minutes required for each token</label>
+      <input id="ratio" type="text" />
+
+      <label>
+        Automatic Overtime
+        <input id="overtime" type="checkbox" />
+      </label>
+
+      <label>Minimum Focus Duration</label>
+      <input id="min-focus" type="text" />
+
+      <label>Maximum Break Duration</label>
+      <input id="max-break" type="text" />
+
+      <h2>Filter</h2>
+
+      <label>Domain/URL Blacklist (one per line)</label>
+      <textarea id="blacklist"></textarea>
+
+      <button id="save">SAVE</button>
     </div>
-
-    <label>Focus/Break Ratio</label>
-    <input id="ratio" type="text" />
-
-    <label>Work time start</label>
-    <input id="work-start" type="text" />
-
-    <label>Work time end</label>
-    <input id="work-end" type="text" />
-
-    <label>
-      Automatic Overtime
-      <input id="overtime" type="checkbox" />
-    </label>
-
-    <label>Minimum Focus Duration</label>
-    <input id="min-focus" type="text" />
-
-    <label>Maximum Break Duration</label>
-    <input id="max-break" type="text" />
-
-    <label>Domain/URL Blacklist (one per line)</label>
-    <textarea id="blacklist"></textarea>
-
-    <button id="save">SAVE</button>
 
     <script src="options.js"></script>
   </body>
